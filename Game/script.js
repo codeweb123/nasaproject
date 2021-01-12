@@ -18,8 +18,8 @@ let scores, currentScore, activePlayer, playing
 //starting conditions of the game
 const init = function () {
 scores = [0,0]
-let currentScore = 0
-let activePlayer = 0
+currentScore = 0
+activePlayer = 0
 playing = true
 
 score0.textContent = 0
@@ -65,8 +65,7 @@ btnHold.addEventListener('click', function() {
     if (playing) {
         scores[activePlayer] += currentScore
         
-        document.getElementById(`score-${activePlayer}`).textContent = 0
-        scores[activePlayer]
+        document.getElementById(`score-${activePlayer}`).textContent = scores[activePlayer]
 
         if (scores[activePlayer] >= 100) {
             playing = false
