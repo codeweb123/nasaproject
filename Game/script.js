@@ -1,7 +1,8 @@
 'use strict'
 
 //select elements
-const player0El = document.querySelector
+const player0El = document.querySelector('.player-0')
+const player1El = document.querySelector('.player-1')
 const score0 = document.querySelector('#score-0') // # is selector for id
 const score1 = document.getElementById('score-1') 
 const current0El = document.getElementById('current-0')
@@ -33,10 +34,14 @@ btnRoll.addEventListener('click', function() {
     } else {
         document.getElementById(`current-${activePlayer}`).textContent = 0
         activePlayer = activePlayer === 0 ? 1 : 0
-        currentScore = 0
+        player0El.classList.toggle('player-active')
+        player1El.classList.toggle('player-active')
     }
 })
 
+btnHold.addEventListener('click', function() {
+
+})
 
 
 
