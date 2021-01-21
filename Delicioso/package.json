@@ -1,0 +1,12 @@
+{
+  "name": "delicioso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Jiyon Trammell",
+  "license": "ISC"
+}
