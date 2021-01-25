@@ -8,5 +8,13 @@
     "build": "parcel build index.html"
   },
   "author": "Jiyon Trammell",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-nightly.551",
+    "sass": "^1.32.5"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "regenerator-runtime": "^0.13.7"
+  }
 }
