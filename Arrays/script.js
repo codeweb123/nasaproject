@@ -1,3 +1,6 @@
+//forEach loops over entire array and cannot break out of it.
+
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
 
 //Looping over each element in array using For Of
@@ -19,7 +22,7 @@ for (const [i, movement] of movements.entries()) {
 }
 
 
-//Looping over using forEach 
+//Looping over using forEach uses a CALLBACK function and you pass in the arguments.
 movements.forEach(function(movement) {
     if (movement > 0) {
         console.log(`You deposited ${movement}`)
@@ -37,5 +40,19 @@ movements.forEach(function(movement, i, array) {
         console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`)
     }
 })
+
+//Created my Own!!!
+
+const animals = ['whale', 'horse', 'turtle', 'lizard']
+
+animals.forEach(function(el) {
+	if(el === 'whale' || el === 'horse') {
+        console.log(`Hi, I'm a mammal called a ${el}.`)
+    } else {
+        console.log(`Hi, I'm a reptile called a ${el}.`)
+    }
+  }
+)
+
 
 
