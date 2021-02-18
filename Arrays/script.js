@@ -40,9 +40,7 @@ movements.forEach(function(movement, i, array) {
         console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`)
     }
 })
-
 //Created my Own!!!
-
 const animals = ['whale', 'horse', 'turtle', 'lizard']
 
 animals.forEach(function(el) {
@@ -53,6 +51,33 @@ animals.forEach(function(el) {
     }
   }
 )
+const children = ['madi', 'claire', 'savannah', 'macy']
 
+children.forEach(function(el, i) {
+    if(el === 'madi') {
+        //console.log(`Number ${i + 1}:`  + el.charAt(0).toUpperCase() + el.slice(1))
+        console.log(`Number ${i + 1}:`  + el[0].toUpperCase() + el.slice(1))
+        //console.log(`Number ${i + 1}: ${el}.`)
+    } else {
+        console.log(`Number ${i + 1}:`  + el.charAt(0).toUpperCase() + el.slice(1))
+    }
+    }
+)
+//New Map
+const currencies = new Map([
+    ['USD', 'United States dollar'],
+    ['EUR', 'Euro'],
+    ['GBP', 'Pound streling'],
+]) 
 
+currencies.forEach(function(value, key, map) {
+    console.log(`${key}: ${value}`)
+})
+
+//New Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR'])
+console.log(currenciesUnique)
+currenciesUnique.forEach(function(value, key, map){
+    console.log(`${key}: ${value}`)
+})
 
