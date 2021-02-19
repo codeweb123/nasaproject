@@ -451,6 +451,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"1mIsM":[function(require,module,exports) {
+var _modelJs = require('./model.js');
 var _imgIconsSvg = require('../img/icons.svg');
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 var _imgIconsSvgDefault = _parcelHelpers.interopDefault(_imgIconsSvg);
@@ -482,21 +483,8 @@ const showRecipe = (async function () {
     console.log(id);
     if (!id) return;
     renderSpinner(recipeContainer);
-    const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/${id}');
-    const data = await res.json();
-    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-    let {recipe} = data.data;
-    recipe = {
-      id: recipe.id,
-      title: recipe.title,
-      publisher: recipe.publisher,
-      sourceUrl: recipe.source_url,
-      image: recipe.image_url,
-      servings: recipe.servings,
-      cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients
-    };
-    console.log(recipe);
+    await _modelJs.loadRecipe(id);
+    const {recipe} = _modelJs.state;
     // render recipe
     const markup = `
                     <figure class="recipe__fig">
@@ -588,7 +576,7 @@ const showRecipe = (async function () {
   }
 })[('hashchange', 'load')].forEach(ev => window.addEventListener(ev, showRecipe));
 
-},{"../img/icons.svg":"7dh2Q","@parcel/transformer-js/lib/esmodule-helpers.js":"HNevC","core-js/stable":"5FWMh","regenerator-runtime/runtime":"55WiQ"}],"7dh2Q":[function() {},{}],"HNevC":[function(require,module,exports) {
+},{"../img/icons.svg":"7dh2Q","@parcel/transformer-js/lib/esmodule-helpers.js":"HNevC","core-js/stable":"5FWMh","regenerator-runtime/runtime":"55WiQ","./model.js":"1CGDk"}],"7dh2Q":[function() {},{}],"HNevC":[function(require,module,exports) {
 "use strict";
 
 exports.interopDefault = function (a) {
@@ -12600,6 +12588,41 @@ try {
   Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-},{}]},{},["5cvg8","1mIsM"], "1mIsM", "parcelRequire045a")
+},{}],"1CGDk":[function(require,module,exports) {
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "state", function () {
+  return state;
+});
+_parcelHelpers.export(exports, "loadRecipe", function () {
+  return loadRecipe;
+});
+require('regenerator-runtime');
+const state = {
+  recipe: {}
+};
+const loadRecipe = async function (id) {
+  try {
+    const res = await fetch('https://forkify-api.herokuapp.com/api/v2/recipes/${id}');
+    const data = await res.json();
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    const {recipe} = data.data;
+    state.recipe = {
+      id: recipe.id,
+      title: recipe.title,
+      publisher: recipe.publisher,
+      sourceUrl: recipe.source_url,
+      image: recipe.image_url,
+      servings: recipe.servings,
+      cookingTime: recipe.cooking_time,
+      ingredients: recipe.ingredients
+    };
+    console.log(state.recipe);
+  } catch (err) {
+    alert(err);
+  }
+};
+
+},{"regenerator-runtime":"55WiQ","@parcel/transformer-js/lib/esmodule-helpers.js":"HNevC"}]},{},["5cvg8","1mIsM"], "1mIsM", "parcelRequire045a")
 
 //# sourceMappingURL=index.1260cbf1.js.map

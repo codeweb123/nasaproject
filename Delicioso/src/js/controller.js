@@ -1,3 +1,5 @@
+import * as model from './model.js'
+import recipeView from './views/recipeView.js'
 import icons from '../img/icons.svg'
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
@@ -24,34 +26,20 @@ const renderSpinner = function(parentEl) {
     parentEl.insertAdjacentHTML('afterbegin', markup)
 }
 
-const showRecipe = async function() {
+const showRecipe = async function() { //async functi
     try {
         const id = window.location.hash.slice(1) //location is url
         console.log(id)
 
         if (!id) return
-
         renderSpinner(recipeContainer)
 
-        const res = await fetch(
-            'https://forkify-api.herokuapp.com/api/v2/recipes/${id}'
-            )
-            const data = await res.json()
+        //load recipe
+        await model.loadRecipe(id) // loadRecipe is an async function that returns a promise
+                                    //so we use keyword await to resolve the promise before continuing.
 
-            if(!res.ok) throw new Error (`${data.message} (${res.status})`)
-            
-            let {recipe} = data.data
-            recipe = {
-                id: recipe.id,
-                title: recipe.title,
-                publisher: recipe.publisher,
-                sourceUrl: recipe.source_url,
-                image: recipe.image_url,
-                servings: recipe.servings,
-                cookingTime: recipe.cooking_time,
-                ingredients: recipe.ingredients
-            }
-            console.log(recipe)
+        // render recipe
+        recipeView.render(model.state.recipe)
             
             // render recipe
             const markup = `
@@ -110,7 +98,7 @@ const showRecipe = async function() {
                         </svg>
                         <div class="recipe__quantity">${ing.quantity}</div>
                         <div class="recipe__description">
-                            <span class="recipe__unit">${ing.unit}</span>
+                            <span class="recipe__unit">"${ing.unit}"</span>
                             ${ing.description}
                         </div>
                         </li>
