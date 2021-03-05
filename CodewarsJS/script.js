@@ -28,5 +28,13 @@ function opposite(number) {
     self.split.map(&:capitalize).join(" ")
   end
 end
-  
-  
+
+function calcAverageHumanAge(ages) {
+  let humanAge = ages.map(age => (age <= 2 ? age * 2:16 + age * 4))
+  let adults = humanAge.filter(age => age >= 18)
+  let averageAge = adults.reduce((acc, curr) => acc + curr, 0) / adults.length 
+  return averageAge
+  }
+
+const avg1 = calcAverageHumanAge([5,2,4,1,15,8,3]) 
+console.log(avg1)
