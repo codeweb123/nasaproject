@@ -25,7 +25,7 @@ function opposite(number) {
 
   class String
   def toJadenCase
-    self.split.map(&:capitalize).join(" ")
+    self.split.map(capitalize).join(" ")
   end
 end
 
@@ -38,3 +38,48 @@ function calcAverageHumanAge(ages) {
 
 const avg1 = calcAverageHumanAge([5,2,4,1,15,8,3]) 
 console.log(avg1)
+
+// delete every nth occurance
+function deleteNth(arr, n){
+  new = []
+  
+
+}
+
+
+//Sum of numbers given starting int and ending int
+//use recursion to call function on ints
+function getSum( a, b) {
+  if(a == b) {
+    return a 
+  } else if (a < b) {
+    return a + getSum(a +1, b)
+  } else {
+    return a + getSum(a-1, b)
+  }
+}
+//example:
+(1,3)
+
+getSum(1,3)
+1 + getSum(2,3)
+ 1 + 2 + getSum(3,3)
+  1 + ( 2 + (3))
+
+  
+
+  function findNeedle(haystack) {
+    // a place to store the index
+    let index;
+    //iterate over the array
+    for (let i = 0; i < haystack.length; i++){
+      
+      const currentValue = haystack[i]
+      if (currentValue === 'needle') {
+        index = i
+        break
+      }
+    }
+    return `found the needle at position ${index}`
+  }
+
