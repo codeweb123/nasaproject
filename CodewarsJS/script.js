@@ -74,12 +74,24 @@ getSum(1,3)
     //iterate over the array
     for (let i = 0; i < haystack.length; i++){
       
-      const currentValue = haystack[i]
-      if (currentValue === 'needle') {
+      const currVal = haystack[i]
+
+      if (currVal === 'needle') {
         index = i
         break
       }
     }
     return `found the needle at position ${index}`
+  }
+
+  //.charAt(i) takes in index
+  function getCount(str) {
+    var vowelsCount = 0;
+    for (let i = 0; i < str.length; i++) {
+        if(str.charAt(i)=="a" || str.charAt(i)=="e" || str.charAt(i)=="i" || str.charAt(i)=="o" ||str.charAt(i)=="u") {
+        vowelsCount++
+      }
+      }
+    return vowelsCount;
   }
 
