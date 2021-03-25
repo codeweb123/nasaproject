@@ -52,7 +52,6 @@ function displayPhotos() {
       imageContainer.appendChild(item);
     });
 }
-
 //Get photos from Unsplash API
 async function getPhotos() {
     try {
@@ -63,7 +62,6 @@ async function getPhotos() {
     //catch error
     }
 }
-
 //Check to see if scrolling near bottom, load more photos
 window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
@@ -71,6 +69,5 @@ window.addEventListener('scroll', () => {
         getPhotos()
     }
 })
-
 // on load
 getPhotos()
