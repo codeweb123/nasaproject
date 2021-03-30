@@ -95,3 +95,30 @@ getSum(1,3)
     return vowelsCount;
   }
 
+
+ //.replace() method on array and .split(".") 
+ //splits at "," " " 
+ function domainName(url){
+  const noPrefix = url.replace("https://", "").replace("http://", "").replace("www.", "")
+  const parts = noPrefix.split(".")
+  return parts[0]
+}
+
+function reverseWords(str) {
+  return str.split("").reverse().join("").split(" ").join(" ")
+}
+
+
+function printerError(s) {
+
+  let OK = "abcdefghijklm".split("")
+  let count = 0
+  
+  s = s.split("")
+    for (let i = 0; i < s.length; i++) {
+      if(!OK.includes(s[i])) {
+        count += 1; 
+      }   
+    }
+  return (`${count}/${s.length}`)
+}
