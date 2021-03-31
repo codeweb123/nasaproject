@@ -95,7 +95,6 @@ getSum(1,3)
     return vowelsCount;
   }
 
-
  //.replace() method on array and .split(".") 
  //splits at "," " " 
  function domainName(url){
@@ -104,13 +103,13 @@ getSum(1,3)
   return parts[0]
 }
 
+
 function reverseWords(str) {
   return str.split("").reverse().join("").split(" ").join(" ")
 }
 
 
 function printerError(s) {
-
   let OK = "abcdefghijklm".split("")
   let count = 0
   
@@ -121,4 +120,8 @@ function printerError(s) {
       }   
     }
   return (`${count}/${s.length}`)
+}
+
+function findUniq(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
 }
