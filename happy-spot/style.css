@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    background: #000;
+    font-family:'Times New Roman', Times, serif;
+}
+.overlay {
+    position: fixed;
+    
+}
