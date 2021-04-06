@@ -21,7 +21,6 @@ for (const [i, movement] of movements.entries()) {
     }
 }
 
-
 //Looping over using forEach uses a CALLBACK function and you pass in the arguments.
 movements.forEach(function(movement) {
     if (movement > 0) {
@@ -30,7 +29,6 @@ movements.forEach(function(movement) {
         console.log(`You withdrew ${Math.abs(movement)}`)
     }
 })
-
 
 // forEach can be used with index and array as well.
 movements.forEach(function(movement, i, array) {
@@ -80,4 +78,36 @@ console.log(currenciesUnique)
 currenciesUnique.forEach(function(value, key, map){
     console.log(`${key}: ${value}`)
 })
+
+// reduce method
+function list(names){
+    return names.reduce(function(prev, current, index, array){
+      if (index === 0){
+        return current.name;
+      }
+      else if (index === array.length - 1){
+        return prev + ' & ' + current.name;
+      } 
+      else {
+        return prev + ', ' + current.name;
+      }
+    }, '');
+   }
+
+   function isValidWalk(walk) {
+    let dx = 0
+    let dy = 0
+    let dt = walk.length
+  
+    for (let i = 0; i < walk.length; i++) {
+      switch (walk[i]) {
+        case 'n': dy++; break
+        case 's': dy--; break
+        case 'w': dx--; break
+        case 'e': dx++; break
+      }
+    }
+  
+    return dt === 10 && dx === 0 && dy === 0
+
 
