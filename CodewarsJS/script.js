@@ -125,3 +125,149 @@ function printerError(s) {
 function findUniq(arr) {
   return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
 }
+
+// reduce method
+function list(names){
+  return names.reduce(function(prev, current, index, array){
+    if (index === 0){
+      return current.name;
+    }
+    else if (index === array.length - 1){
+      return prev + ' & ' + current.name;
+    } 
+    else {
+      return prev + ', ' + current.name;
+    }
+  }, '');
+ }
+
+ function isValidWalk(walk) {
+  let dx = 0
+  let dy = 0
+  let dt = walk.length
+
+  for (let i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case 'n': dy++; break
+      case 's': dy--; break
+      case 'w': dx--; break
+      case 'e': dx++; break
+    }
+  }
+
+  return dt === 10 && dx === 0 && dy === 0
+
+  function isPangram(string){
+    string = string.toLowerCase();
+    return "abcdefghijklmnopqrstuvwxyz"
+      .split("").every(function(x){
+        return string.indexOf(x) !== -1;
+    });
+  }
+
+  let alpha = 'abcdefghijklmnopqrstuvwyz'
+  string = string.toLowerCase()
+  for (let i = 0; i < alpha.length; i++){
+    if (string.indexOf(alpha.charAt(i)) === -1){
+      return
+    }
+  }
+//Algorithms
+//naive string search
+
+  function findMatch(long, short) {
+
+    let count = 0
+    
+    for(var i = 0; i < long.length; i++){
+      for(var j = 0; j < short.length; j++){
+    
+        if(short[j] !== long[i + j])
+        break
+        if(j === short.length - 1)
+    
+        count++
+      }
+    }
+    return count
+  }
+
+  findMatch("lovie loled", "lol")
+
+  //bubble sort- SWAPPING functionality
+  function bubbleSort(arr){
+    var noSwaps
+    
+    for(var i = arr.length; i > 0; i--){
+      noSwaps = true
+
+      for(var j = 0; j < i -1; j++){
+
+        if(arr[j] > arr[j + 1]){
+
+          var temp = arr[j];
+          
+          arr[j] = arr[j+1]
+          arr[j + 1] = temp
+          
+          noSwaps = false
+        }
+      }
+    }
+  }
+
+  //sort
+  function compareByLen(str1, str2){
+    return str2.length - str1.length;
+  }
+  ["Steele", "Colt"].sort(compareByLen)
+
+  function numberCompare(num1 - num2){
+    return num1 - num2;
+  }
+  [6,4,15,10].sort(numberCompare)
+
+  //Selection sort
+
+  function selectionSort(arr){
+    for(var i = 0; i < arr.length; i++){
+      var lowest = i
+      for(var j = i +1; j < arr.length; j++){
+        if(arr[j] < arr[lowest]){
+          lowest = j
+        }
+      }
+      var temp = arr[i]
+      arr[i] = arr[lowest]
+      arr[lowest] = temp
+      return arr 
+    }
+  }
+
+  //merge sort- divide until single int and merge back sorted
+
+  function mergeSort(arr){
+    if(arr.length < = 1)
+    return arr;
+    let mid = Math.floor(arr.length/2)
+    let left = mergeSort(arr.slice(0,mid))
+    let right = mergeSort(arr.slice(mid))
+    return merge(left, right);
+  }
+  mergeSort([10, 24,76,73])
+
+  //literally start at beginning and the 
+  //next num place it where it needs to be inserted.
+  function insertionSort(arr){
+    for (var i = 1; i < arr.length; i++){
+      var currentVal = arr[i]
+      for(var j = i - 1; j >= 0 && arr[j] > currentVal; j--){
+        arr[j+1] = arr[j]
+      }
+      arr[j + 1] = currentVal;
+      }
+      return arr
+    }
+  }
+
+  
