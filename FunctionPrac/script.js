@@ -26,3 +26,18 @@ const checkIn = function(flightNum, passenger) {
 }
 
 checkIn(flight, jonas)
+
+const tips_extendHex = shortHex =>
+  '#' +
+  shortHex
+    .slice(shortHex.startsWith('#') ? 1 : 0)
+    .split('')
+    .map(x => x + x)
+    .join('');
+
+console.log(tips_extendHex('#05f'));
+console.log(tips_extendHex('07a'));
+Output:
+
+"#0055ff"
+"#0077aa"
