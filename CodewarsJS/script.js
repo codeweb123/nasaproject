@@ -304,8 +304,7 @@ function list(names){
 
  class HashTable {
    constructor(size=53){
-     this.keyMap = new Array(siz
-      e);
+     this.keyMap = new Array(size);
    }
 
    _hash(key) {
@@ -370,4 +369,76 @@ function list(names){
  ht.set("hello", "goodbye!!")
  ht.set("dogs", "are cool")
 
+ //Codewars
+ function likes(names) {
+  names = names || [];
+  switch(names.length){
+    case 0: return 'no one likes this'; break;
+    case 1: return names[0] + ' likes this'; break;
+    case 2: return names[0] + ' and ' + names[1] + ' like this'; break;
+    case 3: return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'; break;
+    default: return names[0] + ', ' + names[1] + ' and ' + (names.length - 2) + ' others like this';
+  }
+}
 
+function likes(names) {
+  if(names.length === 0) return "no one likes this";
+  if(names.length === 1) return names[0] + " likes this";
+  if(names.length === 2) return names[0] + " and " + names[1] + " like this";
+  if(names.length === 3) return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+  return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+}
+
+//Singly Linked List
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  constructor(){
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  push(val) {
+    let newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+}
+
+//reverse a linked list
+  reverse() {
+
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node
+    
+    let next;
+    let prev = null;
+    
+    for(var i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  
+  }
+
+T                   H
+n     N                
+0 -> 0 -> 0 -> 0 -> 0
+p
