@@ -38,15 +38,4 @@ let penaltyTime = 0;
 let finalTime = 0;
 let finalTimeDisplay = '0.0';
 
-startForm.addEventListener('click', () => {
-    radioContainers.forEach((radioEl) => {
-        //remove selected label styling
-        radioEl.classList.remove('selected-label');
-        // add back if radio input is checked
-        if (radioEl.children[1].checked) {
-            radioEl.classList.add('selected-label');
-        }
-    });
-});
-
 startForm.addEventListener('click', selectQuestionAmount);
