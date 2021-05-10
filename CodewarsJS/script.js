@@ -227,6 +227,14 @@ function list(names){
   }
   [6,4,15,10].sort(numberCompare)
 
+  //sort by numbers or empty array
+
+  function solution(nums){
+    return (nums || []).sort(function(num1, num2){
+      return num1 - num2
+    });
+  }
+
   //Selection sort
 
   function selectionSort(arr){
@@ -442,3 +450,9 @@ T                   H
 n     N                
 0 -> 0 -> 0 -> 0 -> 0
 p
+//
+
+function removeURLAnchor(url) {
+  return url.split('#')[0];
+}
+
