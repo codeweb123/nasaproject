@@ -163,6 +163,15 @@ function rebuildArrays() {
   updateDOM();
 }
 
+//revised code
+// function rebuildArrays(){
+//  todoListArray = Array.from(todoListEl.children).map(i => i.textContent);
+//  doingListArray = Array.from(doingListEl.children).map(i => i.textContent);
+//  doneListArray = Array.from(doneListEl.children).map(i => i.textContent);
+//  onHoldListArray = Array.from(onHoldListEl.children).map(i => i.textContent); 
+//  updateDOM() 
+//}
+
 // When Item Enters Column Area
 function dragEnter(column) {
   listColumns[column].classList.add('over');
@@ -194,6 +203,5 @@ function drop(e) {
   dragging = false;
   rebuildArrays();
 }
-
 // On Load
 updateDOM();
