@@ -8,7 +8,7 @@ const todoListEl = document.getElementById('todo-list');
 const doingListEl = document.getElementById('doing-list');
 const doneListEl = document.getElementById('done-list');
 const onHoldListEl = document.getElementById('onhold-list');
-
+Object.hasproperty
 // Items
 let updatedOnLoad = false;
 
