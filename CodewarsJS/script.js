@@ -456,3 +456,47 @@ function removeURLAnchor(url) {
   return url.split('#')[0];
 }
 
+//coupon code
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  //if enteredCode || correctCode are equal 
+  if(enteredCode === correctCode){
+    new Date(currentDate) <= (new Date(expirationDate))
+    return true
+  } else {
+    return false 
+  }
+  //then check the dates for validity
+  //coupon is valid 1 day after the expiration date 
+  
+}
+
+
+function factorial(n){
+  if (n === 0) 
+    return 1
+ 
+  if (n < 0 || n > 12) {
+    throw new RangeError();
+  } else {
+    return n * factorial(n-1);
+  }
+}
+
+// two sums
+var twoSum = function(nums, target) {  
+  let map = new Map();
+  for(let i=0; i<nums.length; i++){
+      map.set(nums[i], i);
+  }
+  for (let i=0; i < nums.length; i++){
+      
+      let compliment = target - nums[i];
+      
+      if (map.has(compliment)) {
+          return [map.get(compliment), i]
+      }
+      map.set(nums[i], i);
+  }
+}
+
+
