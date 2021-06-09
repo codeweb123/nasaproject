@@ -1,61 +1,52 @@
 html {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    background: url('./pictures/background.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.fa-paint-brush {
-    font-size: 5rem;
-    color: plum
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
-.fa-palette {
-    font-size: 5rem;
-    color: plum
-}
-
-.container { 
-    font-size: 2rem;   
+.container {
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('./background.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
-
-.button-container {
-    margin-top: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  button {
+    
+button {
+    padding: 5px 15px;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
     cursor: pointer;
-    font-size: 1.2rem;
-    height: 6rem;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
-    background-color: rgb(255, 202, 202);
-    outline: none;
-    padding: 0.5rem 1.8rem 0.5rem 1.8rem;
-    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
   }
-  
-  button:hover {
-    filter: brightness(110%);
+
+  button {
+    size: 100px;
+    background-color: rgb(253, 199, 234); 
+    color: black; 
+    border: 2px solid #ffabe2;
+    border-radius: 20%;
   }
-  
-  button:active {
-    transform: translate(0, 0.3rem);
-    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
-  }
+

@@ -1,6 +1,4 @@
 //forEach loops over entire array and cannot break out of it.
-
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
 
 //Looping over each element in array using For Of
@@ -8,7 +6,7 @@ for (const movement of movements) {
     if (movement > 0) {
         console.log(`You deposited ${movement}`)
     } else {
-        console.log(`YOu withdrew ${Math.abs(movement)}`)
+        console.log(`You withdrew ${Math.abs(movement)}`)
     }
 }
 
@@ -109,5 +107,4 @@ function list(names){
     }
   
     return dt === 10 && dx === 0 && dy === 0
-
 

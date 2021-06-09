@@ -14,7 +14,6 @@ const getCountryData = function(country) {
  //   console.log(data)
   //  renderCountry(data[0])
 
-
 getCountryData('portugal')
 
 //Unsplash API
@@ -33,5 +32,26 @@ async function getPhotos() {
     //catch error
 }
 // on load
-
 getPhotos()
+
+
+const lotteryPromise = new Promise (function(resolve, reject) {
+    setTimeout(function() {
+    if(Math.random() >= 0.5) {
+        resolve('You WIN')
+    } else {
+        reject(new Error('You lost'))
+    }
+    }, 2000)
+})
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))
+
+
+const whereAmI = function(lat, lng) {
+    fetch(`'https://geocode.xyz/${lat},${lng}?geoit=json'`)
+    .then(response => response.json())
+    .then(data => {console.log(data)})
+}
+
+whereAmI(52, 13)

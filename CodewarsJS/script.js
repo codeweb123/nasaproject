@@ -8,14 +8,12 @@ function opposite(number) {
       }
     //your code here
   }
-
   //return str without first and last char
 
   function removeChar(str){
     return str.slice(1, -1)
     //You got this!
   };
-
   //filter out friend names that have 4 letters
 
   function friend(friends){
@@ -35,18 +33,12 @@ function calcAverageHumanAge(ages) {
   let averageAge = adults.reduce((acc, curr) => acc + curr, 0) / adults.length 
   return averageAge
   }
-
 const avg1 = calcAverageHumanAge([5,2,4,1,15,8,3]) 
 console.log(avg1)
-
 // delete every nth occurance
 function deleteNth(arr, n){
   new = []
-  
-
 }
-
-
 //Sum of numbers given starting int and ending int
 //use recursion to call function on ints
 function getSum( a, b) {
@@ -498,5 +490,11 @@ var twoSum = function(nums, target) {
       map.set(nums[i], i);
   }
 }
+
+var isPalindrome = function(x) {
+  return x === Number(x.toString().split("").reverse().join(""));
+};
+
+
 
 
