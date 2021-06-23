@@ -1,5 +1,4 @@
 //return opposite num
-
 function opposite(number) {
     if (number > 0){
       return -Math.abs(number)
@@ -8,23 +7,23 @@ function opposite(number) {
       }
     //your code here
   }
-  //return str without first and last char
 
+  //return str without first and last char
   function removeChar(str){
     return str.slice(1, -1)
     //You got this!
   };
-  //filter out friend names that have 4 letters
 
+  //filter out friend names that have 4 letters
   function friend(friends){
     return friends.filter(n => n.length === 4)
     //your code here
   }
 
   class String
-  def toJadenCase
-    self.split.map(capitalize).join(" ")
-  end
+    def toJadenCase
+      self.split.map(capitalize).join(" ")
+    end
 end
 
 function calcAverageHumanAge(ages) {
@@ -35,6 +34,7 @@ function calcAverageHumanAge(ages) {
   }
 const avg1 = calcAverageHumanAge([5,2,4,1,15,8,3]) 
 console.log(avg1)
+
 // delete every nth occurance
 function deleteNth(arr, n){
   new = []
@@ -459,7 +459,6 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
   }
   //then check the dates for validity
   //coupon is valid 1 day after the expiration date 
-  
 }
 
 
