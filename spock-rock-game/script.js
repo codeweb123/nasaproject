@@ -1,3 +1,5 @@
+import { startConfetti, stopConfetti } from './confetti.js';
+
 const playerScoreEl = document.getElementById('playerScore');
 const playerChoiceEl = document.getElementById('playerChoice');
 const computerScoreEl = document.getElementById('computerScore');
@@ -25,18 +27,27 @@ const choices = {
     lizards: { name: 'Lizard', defeats: ['paper', 'spock'] },
     spock: { name: 'Spock', defeats: ['scissors', 'rock'] }
 };
-
 let playerScoreNumber = 0;
 let computerScoreNumber = 0;
 let computerChoice = '';
-
 //reset all 'selected' icons
 function resetSelected() {
     allGameIcons.forEach((icon) => {
         icon.classList.remove('selected');
     });
 }
-
+//reset score and playerChoice/computerChoice
+function resetAll() {
+    playerScoreNumber = 0;
+    computerScoreNumber = 0;
+    playerScoreEl.textContent = playerScoreNumber;
+    computerScoreEl.textContent = computerScoreNumber;
+    playerChoiceEl.textContent = '';
+    computerChoiceEl.textContent = '';
+    resultText.textContent = '';
+    resetSelected();
+}
+window.resetAll = resetAll
 //random computer choice
 function computerRandomChoice() {
     const computerChoiceNumber = Math.random(); 
@@ -52,7 +63,6 @@ function computerRandomChoice() {
         computerChoice = 'spock';
     }
 }
-
 function displayComputerChoice() {
     switch (computerChoice) {
         case 'rock':
@@ -79,7 +89,6 @@ function displayComputerChoice() {
             break;
     }
 }
-
 function updateScore(playerChoice) {
     console.log(playerChoice, computerChoice);
     if (playerChoice === computerChoice) {
@@ -87,17 +96,18 @@ function updateScore(playerChoice) {
     } else {
         const choice = choices[playerChoice];
         if (choice.defeats.indexOf(computerChoice) > -1) {
+            startConfetti();
             resultText.textContent = "You Won!";
             playerScoreNumber++;
             playerScoreEl.textContent = playerScoreNumber;
         } else {
+            stopConfetti();
             resultText.textContent = "You Lost!";
             computerScoreNumber++;
             computerScoreEl.textContent = computerScoreNumber;
         }
     }
 }
-
 // call functions to process turn
 function checkResult(playerChoice) {
     resetSelected();
@@ -105,7 +115,6 @@ function checkResult(playerChoice) {
     displayComputerChoice();
     updateScore(playerChoice);
 }
-
 //player selects choice 
 function select(playerChoice) {
     checkResult(playerChoice);
@@ -135,4 +144,6 @@ function select(playerChoice) {
             break;
     }
 }
-
+window.select = select;
+// on startup, set intial values
+resetAll();
