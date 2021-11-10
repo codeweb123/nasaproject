@@ -1,3 +1,7 @@
+//Array methods- functions attached to objects.
+
+
+
 //forEach loops over entire array and cannot break out of it.
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
 
@@ -107,4 +111,27 @@ function list(names){
     }
   
     return dt === 10 && dx === 0 && dy === 0
+
+//SLICE- does not change original array
+let arr = ['a', 'b', 'c', 'd', 'e'];
+arr.slice(2);
+arr.slice(2, 4);
+//SLICE right before the number position.
+arr.slice(-2);
+arr.slice(1, -2);
+
+//SPLICE- mutates original array
+arr.splice(2); 
+//returns cut off part
+//original arr is mutated!!
+arr.splice(-1);
+arr.splice(1, 2);
+//(position, # of elements we want to delete)
+
+//REVERSE 
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+
+
+
 
