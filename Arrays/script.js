@@ -1,7 +1,4 @@
 //Array methods- functions attached to objects.
-
-
-
 //forEach loops over entire array and cannot break out of it.
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
 
@@ -13,6 +10,7 @@ for (const movement of movements) {
         console.log(`You withdrew ${Math.abs(movement)}`)
     }
 }
+//
 
 //Looping over each element in array using the index
 for (const [i, movement] of movements.entries()) {
