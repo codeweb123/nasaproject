@@ -130,6 +130,19 @@ arr.splice(1, 2);
 
 //REVERSE 
 let arr = ['a', 'b', 'c', 'd', 'e'];
+arr.reverse()
+const arr2 = ['j', 'i', 'h'];
+//CONCAT
+const letters = arr.concat(arr2);
+([...arr], ...arr2])
+//returns same array
+console.log(letters.join(' - '));
+
+
+
+
+
+
 
 
 
