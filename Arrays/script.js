@@ -152,6 +152,18 @@ movements.map(mov => mov * eurToUsd);
 
 for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
 
+//map method
+const movementsDescriptions = movements.map((mov, i, arr)) => {
+    if (mov > 0) {
+        console.log(`Movement ${i + 1}: You deposited $ {mov}`);
+    } else {
+        console.log(`Movement ${i + 1}: You withdrew $ {Math.abs(mov)}`);
+    }
+}
+
+//Math.abs  only returns positive numbers.
+
+
 
 
 
