@@ -23,6 +23,11 @@ body {
     padding: 50px;
 }
 
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+
 /*<div class="container">
         <div class="circle-container">
             <div class="circle">
