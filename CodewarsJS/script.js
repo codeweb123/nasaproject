@@ -62,7 +62,7 @@ function getSum( a, b) {
 }
 //example:
 (1,3)
-
+//answer progression below
 getSum(1,3)
 1 + getSum(2,3)
  1 + 2 + getSum(3,3)
@@ -511,6 +511,11 @@ function isPalindrome(value) {
  function countChar(str, letter) {
   return str.split(letter).length - 1;
  }
+
+ //124
+ function narcissistic( value ) {
+  return value.toString().split('').reduce((total, num)=> total + Math.pow(num, ('' + value).length), 0) == value;
+//
 
 
 
