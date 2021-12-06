@@ -39,6 +39,16 @@ console.log(avg1)
 function deleteNth(arr, n){
   new = []
 }
+
+function delete2nd(arr, i) {
+	for(let i = 2; i <= arr.length; i += 2) {
+  	arr.splice(i, 1);
+  }
+  return arr
+}
+
+console.log(delete2nd(["1","2","3","4","5",6,7,8,9]))
+
 //Sum of numbers given starting int and ending int
 //use recursion to call function on ints
 function getSum( a, b) {
