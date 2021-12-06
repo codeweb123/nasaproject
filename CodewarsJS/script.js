@@ -24,7 +24,7 @@ function opposite(number) {
     def toJadenCase
       self.split.map(capitalize).join(" ")
     end
-end
+  end
 
 function calcAverageHumanAge(ages) {
   let humanAge = ages.map(age => (age <= 2 ? age * 2:16 + age * 4))
@@ -493,6 +493,14 @@ var twoSum = function(nums, target) {
 var isPalindrome = function(x) {
   return x === Number(x.toString().split("").reverse().join(""));
 };
+
+function isPalindrome(value) {
+  return value == value.split('').reverse().join('');
+ }
+ 
+ function countChar(str, letter) {
+  return str.split(letter).length - 1;
+ }
 
 
 
