@@ -8,8 +8,8 @@ pets = [
   { name: "Bo", age: 0, yearBought: 1981, died: 1995 },
 ];
 
-ages = [1, 2, 3, 5, 7, 8, 9, 6, 4, 3, 2, 3, 4, 5, 5, 4, 22];
-birthYear = [1980, 1981, 1999, 1951, 1952, 1982];
+const ages = [1, 2, 3, 5, 7, 8, 9, 6, 4, 3, 2, 3, 4, 5, 5, 4, 22];
+const birthYear = [1980, 1981, 1999, 1951, 1952, 1982];
 
 //for loop
 for (let i = 0; i < pets.length; i++) {
@@ -18,5 +18,14 @@ for (let i = 0; i < pets.length; i++) {
 // forEach
 pets.forEach((pet) => console.log(pet.name));
 
-//filter
+//filter creates NEW array
 const buyPet = ages.filter((age) => age > 18);
+
+const nameStartB = pets.filter((pet) => pet.name.indexOf("B") == 0);
+
+//map method creates NEW ARRAY created
+const testMap = pets.map((pet) => `${pet.name}`);
+
+const agesSquare = ages.map((age) => Math.sqrt(age));
+
+const ageMap = ages.map((age) => Math.sqrt(age)).map((age) => age * 2);
