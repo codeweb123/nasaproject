@@ -29,3 +29,10 @@ const testMap = pets.map((pet) => `${pet.name}`);
 const agesSquare = ages.map((age) => Math.sqrt(age));
 
 const ageMap = ages.map((age) => Math.sqrt(age)).map((age) => age * 2);
+
+//sort
+const sortedPets = pets.sort((a, b) => (a.yearBought < b.died ? 1 : -1));
+
+const ages = [1, 2, 3, 5, 7, 8, 9, 6, 4, 3, 2, 3, 4, 5, 5, 4, 22];
+
+const sortAges = ages.sort((a, b) => a - b);
