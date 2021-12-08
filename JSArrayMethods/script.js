@@ -36,3 +36,27 @@ const sortedPets = pets.sort((a, b) => (a.yearBought < b.died ? 1 : -1));
 const ages = [1, 2, 3, 5, 7, 8, 9, 6, 4, 3, 2, 3, 4, 5, 5, 4, 22];
 
 const sortAges = ages.sort((a, b) => a - b);
+
+//reduce
+let ageSum = 0;
+
+for (let i = 0; i < ages.length; i++) {
+  ageSum + ages[i];
+}
+
+const ages = [1, 2, 3, 5, 7, 8, 9, 6, 4, 3, 2, 3, 4, 5, 5, 4, 22];
+
+let ageSum = 0;
+
+for (let i = 0; i < ages.length; i++) {
+  ageSum += ages[i];
+}
+// += means ageSum = ageSum + ages[i]
+
+const ageSum2 = ages.reduce((total, age) => total + age, 0);
+
+const combined = ages
+  .map((age) => age * 2)
+  .filter((age) => age >= 40)
+  .sort((a, b) => a - b)
+  .reduce((a, b) => a + b, 0);
