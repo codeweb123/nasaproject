@@ -64,7 +64,8 @@
  }
 
  .movie-info h3 {
-     margin-top: 0;
+     margin-top: 10px;
+     margin-left: 10px;
      color: white;
  }
 
@@ -77,6 +78,8 @@
 
  .movie-info span.green {
      color: lightgreen;
+     margin-right: 10px;
+
  }
 
  .movie-info span.orange {
