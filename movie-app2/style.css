@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blue;
+    margin: 0;
+}
+
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: blueviolet;
+}
+
+.search {
+    background-color: transparent;
+    border: 5px solid violet;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1rem;
+}
+
+.search::placeholder {
+    color: white;
+}
+
+.search:focus {
+    outline: none;
+    background-color: violet;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 100px;
+    background-color: tomato;
+    position: relative;
+}
+
+
+
