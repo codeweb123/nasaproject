@@ -514,8 +514,36 @@ function isPalindrome(value) {
 
  //124
  function narcissistic( value ) {
-  return value.toString().split('').reduce((total, num)=> total + Math.pow(num, ('' + value).length), 0) == value;
-//
+  return value.toString().split('').reduce((total, num)=> total + Math.pow(num, (value.toString()).length), 0) == value}
+//Math.pow(2,2)
+//Takes in 2 arguments.
+
+//new array filter out b's array.
+function arrayDiff(a,b) {
+  return a.filter( x => !b.includes(x));
+}
+
+var operands = {
+  '+': function (b, a) { return a + b;},
+  '-': function (b, a) { return a - b;},
+  '*': function (b, a) { return a * b;},
+  '/': function (b, a) { return a / b;}
+};
+
+function calc(expr) {
+  expr = expr || '0';
+  return +expr.split(/\s/g).reduce(function (stack, current) {
+      stack.push(operands[current] ? operands[current](+stack.pop(), +stack.pop()) : current);
+    return stack;
+  }, []).pop();
+}
+
+
+
+
+
+
+
 
 
 
