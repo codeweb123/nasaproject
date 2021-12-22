@@ -131,7 +131,7 @@ input:invalid {
 .button {
     position: absolute;
     margin: 0;
-    top: 100%;
+    top: 90%;
     left: 40%;
 }
 
@@ -141,7 +141,7 @@ button {
     background: #33b4ff;
     border: none;
     border-radius: 5px;
-    width: 30%;
+    width: 100%;
     font-size: 7px;
 }
 
@@ -158,9 +158,6 @@ button {
     top: 6%;
     left: 90%;
     transform: translate(-51.6%, -45%);
-}
-
-#buttons li {
     display: inline;
     padding-left: 10px;
 }
