@@ -523,6 +523,11 @@ function arrayDiff(a,b) {
   return a.filter( x => !b.includes(x));
 }
 
+//Intersection
+
+ let intersection = arr1.filter(x => arr2.includes(x));
+
+ 
 var operands = {
   '+': function (b, a) { return a + b;},
   '-': function (b, a) { return a - b;},
@@ -537,6 +542,13 @@ function calc(expr) {
     return stack;
   }, []).pop();
 }
+
+//phone number
+
+function createPhoneNumber(numbers) {
+  return `(` + numbers.slice(0,3).join('') + ') ' + numbers.slice(3,6).join('') + '-' + numbers.slice(6).join('');
+}
+
 
 
 
