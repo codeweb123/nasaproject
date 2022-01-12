@@ -524,10 +524,8 @@ function arrayDiff(a,b) {
 }
 
 //Intersection
+let intersection = arr1.filter(x => arr2.includes(x));
 
- let intersection = arr1.filter(x => arr2.includes(x));
-
- 
 var operands = {
   '+': function (b, a) { return a + b;},
   '-': function (b, a) { return a - b;},
@@ -544,9 +542,23 @@ function calc(expr) {
 }
 
 //phone number
-
 function createPhoneNumber(numbers) {
   return `(` + numbers.slice(0,3).join('') + ') ' + numbers.slice(3,6).join('') + '-' + numbers.slice(6).join('');
+}
+
+// n+n
+function digital_root(n) {
+  let result = 0;
+  String(n).split('').map(num => {
+    result += Number(num);
+  });
+  return result > 10 ? digital_root(result) : result;
+}
+
+//digital root solution- hack
+//https://mathworld.wolfram.com/DigitalRoot.html
+function digital_root(num) {
+  return (num % 9) || 9;
 }
 
 
