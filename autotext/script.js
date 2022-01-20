@@ -1,17 +1,26 @@
-const textEl = document.getElementById("text");
 const speedEl = document.getElementById("speed");
-const text = "We Love Programming!";
+const sentenceEl = document.getElementById("sentence");
+const outText = document.getElementById("outtext");
+const btn = document.getElementById("btn");
 
-let idx = 1
-let speed = 300 / speedEl.value
+let idx = 1;
+let speed = 300 / speedEl.value;
 
-writeText()
+function getText() {
+  outText.innerHTML = sentenceEl.value;
+}
+btn.addEventListener("click", getText);
 
 function writeText() {
-    textEl.innerText = text.slice(0, idx)
+  outText.innerHTML = outText.slice(0, idx);
 
-    idx++
+  idx++;
 
-    if()
-} 
+  if (idx > outText.length) {
+    idx = 1;
+  }
 
+  setTimeout(writeText, speed);
+}
+
+speedEl.addEventListener("input", (e) => (speed = 300 / e.target.value));

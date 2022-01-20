@@ -13,7 +13,15 @@ body {
     margin: 0;
 }
 
-div {
+div.sentence {
+    position: absolute;
+    top: 20px;
+    background: rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+div.speed {
     position: absolute;
     bottom: 20px;
     background: rgba(0,0,0,0.1);
@@ -21,7 +29,7 @@ div {
     font-size: 18px;
 }
 
-input {
+input#speed {
     width: 50px;
     padding: 5px;
     font-size: 18px;
