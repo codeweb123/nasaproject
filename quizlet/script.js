@@ -32,3 +32,8 @@ const quizData = [
     correct: "b",
   },
 ];
+
+let currentQuiz = 0;
+let score = 0;
+
+function loadQuiz() {}
