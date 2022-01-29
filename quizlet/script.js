@@ -33,6 +33,10 @@ const quizData = [
   },
 ];
 
+const quiz = document.getElementById("quiz");
+const answerEls = document.querySelectorAll(".answer");
+const questionEl = document.getElementById("question");
+
 let currentQuiz = 0;
 let score = 0;
 
