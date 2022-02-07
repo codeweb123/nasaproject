@@ -23,3 +23,8 @@ function stopSongs() {
     song.currentTime = 0;
   });
 }
+//audio tags have methods
+
+// .play()
+// .pause()
+// .currentTime = 0
