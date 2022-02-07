@@ -3,7 +3,8 @@
 }
 
 body {
-    background-color: firebrick;
+    background-color: rgb(209, 71, 243);
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin: 30px 50px;
 }
 
