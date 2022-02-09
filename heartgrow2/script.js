@@ -4,7 +4,9 @@ const times = document.querySelector("#times");
 let clickTime = 0;
 let timesClicked = 0;
 
-loveMe.addEventListener("click", (e) => {
+loveMe.addEventListener("dblclick", (e) => createDog(e));
+
+/* loveMe.addEventListener("click", (e) => {
   if (clickTime === 0) {
     clickTime = new Date().getTime();
   } else {
@@ -15,7 +17,7 @@ loveMe.addEventListener("click", (e) => {
       clickTime = new Date().getTime();
     }
   }
-});
+});*/
 
 const createDog = (e) => {
   const dog = document.createElement("i");
