@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #8989ff;
+    height: 100vh;  
+}
+
+h1 {
+    text-align: center;
+}
+
+.input {
+    
+}
