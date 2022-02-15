@@ -16,12 +16,33 @@ const randomFunc = {
 
 generateEl.addEventListener("click", () => {
   const length = +lengthEl.value;
-  const hasLower = lowercaseEl.value;
-  const hasUpper = uppercaseEl.value;
-  const hasNumber = numbersEl.value;
-  const hasSymbol = symbolsEl.value;
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
+
+  resultEl.innerText = generatePassword(
+    hasLower,
+    hasUpper,
+    hasNumber,
+    hasSymbol,
+    length
+  );
 });
 
+function generatePassword(lower, upper, number, symbol, length) {
+    let generatedPassword = ''
+    const typesCount = lower + upper + number + symbol
+    const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0])
+    if(typesCount === 0) {
+        return ''
+    }
+
+    for(let i = 0; i < ) {
+        
+    }
+}
+//gives T or F value
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
