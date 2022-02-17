@@ -23,14 +23,18 @@ body {
 .square {
     background-color: #1d1d1d;
     box-shadow: 0 0 2px #111;
-    height: 16px;
-    width: 16px;
+    height: 40px;
+    width: 40px;
     margin: 2px;
-    transition: 2s ease;
+    
 }
 
+/* transition: 2s ease; */
+
+/*
 .square:hover {
     transition-duration: 0s;
 }
+*/
 
 
