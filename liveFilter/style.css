@@ -56,12 +56,19 @@ body {
     max-height: 400px;
     overflow-y: auto;
     padding: 0;
-    overflow-y: auto;
 }
+/* overflow-y: scroll up and down */
 
 .user-list li {
     display: flex;
+    padding: 20px;
+}
 
+.user-list img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
 }
 
 
