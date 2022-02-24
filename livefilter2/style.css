@@ -59,12 +59,30 @@ body {
 }
 
 .info li {
-
+    display: flex;
+    padding: 20px;
 }
 
 .info img {
-
+    border-radius: 20px;
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
 }
 
-.info
+.info .user-info {
+    margin-left: 10px;   
+}
+
+.info .user-info h3 {
+    margin: 0 0 10px;
+}
+
+.info li:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+
+.info li.hide {
+    display: none;
+}
 
