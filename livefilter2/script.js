@@ -1,13 +1,14 @@
 const result = document.getElementById("result");
 const filter = document.getElementById("filter");
-
 const listItems = [];
 
 getData();
 
+filter.addEventListener("input", (e) => filterData(e.target.value)); //gives us what is typed into the input
+
 async function getData() {
   const res = await fetch("https://randomuser.me/api?results=50");
-
+  //results name of Obj
   const { results } = await res.json();
 
   result.innerHTML = " ";
@@ -17,13 +18,14 @@ async function getData() {
     listItems.push(li);
 
     li.innerHTML = `
-      <img src="${user.picture.large}" alt="${user.name.first}">
-      <div class="user-info">
-      <h3>${user.name.first} ${user.name.last}</h3>
-      <p>${user.location.city}, ${user.location.country}</p>
-      </div>
-      `;
+    <img src="${user.picture.large}" alt="${user.name.first}">
+    <div class="user-info">
+    <h4>${user.name.first} ${user.name.last}</h4>
+    <p>${user.location.city}, ${user.location.country}</p>
+    </div>    
+    `;
     result.appendChild(li);
+    //property names that vary
   });
 }
 
