@@ -4,9 +4,27 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     overflow: hidden;
-    
+    min-height: 100vh; 
 }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.container img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    max-width: 100%;
+}
+
