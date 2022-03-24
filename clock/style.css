@@ -65,7 +65,7 @@ html.dark {
 }
 
 .needle.hour {
-    transform
+    transform: translate(-50%, -100%) rotate(0deg);
 }
 
 
