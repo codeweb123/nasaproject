@@ -65,7 +65,12 @@ html.dark {
 }
 
 .needle.hour {
-    transform: translate(-50%, -100%) rotate(0deg);
+    transform: translate(-50%, -100%) rotate(30deg);
+}
+
+.needle.minute {
+    transform: translate(-50%, 100%) rotate(30deg);
+    height: 100px;
 }
 
 
