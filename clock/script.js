@@ -1,9 +1,9 @@
 const hourEl = document.querySelector(".hour");
-const hourEl = document.querySelector(".minute");
-const hourEl = document.querySelector(".second");
-const hourEl = document.querySelector(".time");
-const hourEl = document.querySelector(".date");
-const hourEl = document.querySelector(".toggle");
+const minuteEl = document.querySelector(".minute");
+const secondEl = document.querySelector(".second");
+const timeEl = document.querySelector(".time");
+const dateEl = document.querySelector(".date");
+const toggle = document.querySelector(".toggle");
 
 const days = [
   "Sunday",
@@ -43,4 +43,14 @@ toggle.addEventListener("click", (e) => {
 
 function setTime() {
   const time = new Date();
+  const month = time.getMonth();
+  const day = time.getDay();
+  const hours = time.getHours();
+  const hoursForClock = hours % 12;
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+
+  hourEl.getElementsByClassName.transform = `trasform: translate(-50%, -100%) rotate(30deg)`;
 }
+
+setTime();
