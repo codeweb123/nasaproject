@@ -36,5 +36,7 @@ toggle.addEventListener("click", (e) => {
     html.classList.remove("dark");
     e.target.innerHTML = "Dark Mode";
   } else {
+    html.classList.add("dark");
+    e.target.innerHTML = "Light Mode";
   }
 });
