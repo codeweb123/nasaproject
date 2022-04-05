@@ -12,7 +12,7 @@ const days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Satur",
+  "Saturday",
 ];
 
 const months = [
