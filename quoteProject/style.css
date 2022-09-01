@@ -18,3 +18,8 @@ body {
     justify-content: center;
 
 }
+
+.quote-container {
+    width: auto;
+    max-width: 900px;
+}
