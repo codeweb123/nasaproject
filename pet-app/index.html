@@ -15,16 +15,30 @@
 <body>
     <div class="sidebar">
         <img src="logo_cat.png" alt="Logo" class="logo" />
-
         <ul class="pets">
             <form class="form hidden">
                 <div class=""form_row">
                 <label class="form_label">Type</label>
+                <select class="form__input form__input--type">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                </select>
             </div>
+            <div class="form__row">
+                <label class="form__label">Name</label>
+                <input class="form__input form__input--name" placeholder="name" />
+              </div>
+              <div class="form__row">
+                <label class="form__label">Time</label>
+                <input
+                  class="form__input form__input--time"
+                  placeholder="minutes"
+                />
+              </div>
+                <button class="form__btn">OK</button>
             </form>
-
-        </ul>
-    </div>
-    
-</body>
-</html>
+          </ul>
+        </div>
+        <div id="map"></div>
+      </body>
+    </html>
