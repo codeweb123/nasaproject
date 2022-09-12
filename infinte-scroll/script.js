@@ -9,3 +9,5 @@ async function getPhotos() {
     console.log(data);
   } catch (error) {}
 }
+
+getPhotos();
