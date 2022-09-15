@@ -8,7 +8,7 @@ let photosArray = [];
 
 const count = 30;
 const apiKey = "iFGcsJGbAFjC-mkoHNQu2w3PIlxnD5EC_QVbIUostEQ";
-const apiUrl = `https://api.unsplash.com/photos/?client_id=${apiKey}&count=${count}`;
+const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 
 function imageLoaded() {
   imagesLoaded++;
@@ -40,6 +40,7 @@ function displayPhotos() {
     img.addEventListener("load", imageLoaded);
     item.appendChild(img);
     imageContainer.appendChild(item);
+    console.log(count);
   });
 }
 
