@@ -18,10 +18,11 @@ function tellMe(joke) {
 // Get jokes from Joke API
 async function getJokes() {
   const apiUrl =
-    "https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,racist,sexist";
+    "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
+    console.log(data);
     // Assign One or Two Part Joke
     if (data.setup) {
       joke = `${data.setup} ... ${data.delivery}`;
