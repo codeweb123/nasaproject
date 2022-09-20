@@ -1,3 +1,6 @@
+const button = document.getElementById("button");
+const audioElement = document.getElementById("audio");
+
 function tellMe(joke) {
   const jokeString = joke.trim().replace(/ /g, "%20");
   // VoiceRSS Speech Parameters
@@ -14,7 +17,6 @@ function tellMe(joke) {
 
 // Get jokes from Joke API
 async function getJokes() {
-  let joke = "";
   const apiUrl =
     "https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,racist,sexist";
   try {
@@ -31,6 +33,7 @@ async function getJokes() {
     // Disable Button
     toggleButton();
   } catch (error) {
+    console.log("whoops", error);
     // Catch Error Here
   }
 }
