@@ -1,9 +1,11 @@
 const button = document.getElementById("button");
 const audioElement = document.getElementById("audio");
 
+//pass joke to VoiceRSS API
+
 function tellMe(joke) {
   const jokeString = joke.trim().replace(/ /g, "%20");
-  // VoiceRSS Speech Parameters
+  // VoiceRSS Speech
   VoiceRSS.speech({
     key: "b1e0fb006377467dbf2a49d8a4640c5e",
     src: jokeString,
