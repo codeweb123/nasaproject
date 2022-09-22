@@ -97,3 +97,46 @@ const VoiceRSS = {
 function toggleButton() {
   button.disabled = !button.disabled;
 }
+
+function tellMe(dog) {
+  const dogString = dog.trim().replace(/ /g, "%20");
+
+  VoiceRSS.speech({
+    key: "b1e0fb006377467dbf2a49d8a4640c5e",
+    src: dogString,
+    hl: "en-us",
+    r: 0,
+    c: "mp3",
+    f: "44khz_16bit_stereo",
+    ssml: false,
+  });
+}
+
+async function getDogs() {
+  let dog = "golden retriever";
+  const apiUrl = "https://api.api-ninjas.com/v1/dogs?name=" + dog;
+  try {
+    const response = await fetch(apiUrl, {
+      method: "GET",
+      headers: { "X-Api-Key": "jtAMozoRx5WmLJl07wRKQQ==6F1Dpvw4uHeeIAvl" },
+      contentType: "application/json",
+    });
+    const data = await response.json();
+    console.log(data);
+    // if (data.setup) {
+    //   dog = `${data.setup} ... ${data.delivery}`;
+    // } else {
+    //   joke = data.joke;
+    // }
+    // Passing Joke to VoiceRSS API
+    // tellMe(dog);
+    // // Disable Button
+    // toggleButton();
+  } catch (error) {
+    console.log("whoops", error);
+    // Catch Error Here
+  }
+}
+
+button.addEventListener("click", getDogs);
+audioElement.addEventListener("ended", toggleButton);
