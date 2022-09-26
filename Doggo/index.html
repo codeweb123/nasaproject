@@ -9,7 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <button id="button">Show Me A Dog!</button>
+        <div class="name-form" id="myForm">
+            <form action="/inputdog" method="post" id="inputdog">
+                <div class="field">
+                    <label for="dog-name">Dog Name:</label>
+                    <input type="text" id="name" placeholder="Enter a dog breed">
+                    <button type="submit">Submit Dog</button>
+                </div>
+            </form>
+        </div>
+        <button hidden id="button">Show Me A Dog!</button>
         <audio id="audio" controls hidden></audio>
     </div>
     <script src="voiceRSS.js"></script>

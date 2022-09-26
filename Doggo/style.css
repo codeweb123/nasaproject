@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('./dog.gif');
+    background: url('./dog.webp');
     background-position: center;
     background-repeat: no-repeat;
 }
