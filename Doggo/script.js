@@ -1,6 +1,6 @@
 const button = document.getElementById("button");
 const audioElement = document.getElementById("audio");
-const myForm = document.getElementById("myForm");
+const myForm = document.querySelector(".form");
 
 const VoiceRSS = {
   speech(e) {
@@ -112,40 +112,20 @@ function tellMe(dog) {
   });
 }
 
-async function postFormDataAsJson({ url, formData }) {
-  const plainFormData = Object.fromEntries(formData.entries());
-  const formDataJsonString = JSON.stringify(plainFormData);
-  const fetchOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: formDataJsonString,
-  };
-
-  const response = await fetch(url, fetchOptions);
-
-  if (!response.ok) {
-    const errorMessage = await response.text();
-    throw new Error(errorMessage);
-  }
-
-  return response.json();
-}
-
-async function handleFormSubmit(e) {
+function handleFormSubmit(e) {
   e.preventDefault();
-  const form = e.currentTarget;
-  const url = form.action;
-
-  try {
-    const formData = new FormData(form);
-    const responseData = await postFormDataAsJson({ url, formData });
-    console.log({ responseData });
-  } catch (error) {
-    console.error(error);
-  }
+  const formData = new FormData(myForm);
+  const data = new URLSearchParams(formData);
+  fetch(
+    "https://api.thedogapi.com/v1/images/search?api_key=live_cKcehvv7ZeeqCMQr8VpClaHMC8l2HZo99UJabtdiFgQB5TBNMy8E5VR5OfMiNubL",
+    {
+      method: "POST",
+      body: data,
+    }
+  )
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }
 
 async function getDogs() {
