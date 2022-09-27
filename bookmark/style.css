@@ -52,7 +52,16 @@ a {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+}
 
+a:link,
+a:visited {
+    color: white;  
+}
+
+a:hover,
+a:active {
+    text-decoration: underline;
 }
 
 
