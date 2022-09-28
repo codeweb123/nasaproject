@@ -6,6 +6,8 @@ const websiteNameEl = document.getElementById("website-name");
 const websiteUrlEl = document.getElementById("website-url");
 const bookmarksContainer = document.getElementById("bookmarks-container");
 
+let bookmarks = [];
+
 function showModal() {
   modal.classList.add("show-modal");
   websiteNameEl.focus();
@@ -34,6 +36,21 @@ function validate(nameValue, urlValue) {
   // Valid
   return true;
 }
+
+function fetchBookmarks() {
+  if (localStorage.getItem("bookmarks")) {
+    bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+  } else {
+    bookmarks = [
+      {
+        name: "Jiyon Codes",
+        url: "https://jiyoncodes.com",
+      },
+    ];
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }
+}
+
 //handle data from form
 function storeBookmark(e) {
   e.preventDefault();
@@ -45,6 +62,18 @@ function storeBookmark(e) {
   if (!validate(nameValue, urlValue)) {
     return false;
   }
+  const bookmark = {
+    name: nameValue,
+    url: urlValue,
+  };
+  bookmarks.push(bookmark);
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  fetchBookmarks();
+  bookmarkForm.reset();
+  websiteNameEl.focus();
 }
 //event listener
 bookmarkForm.addEventListener("submit", storeBookmark);
+
+//on load
+fetchBookmarks();
