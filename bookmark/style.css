@@ -75,6 +75,9 @@ a:active {
     cursor: pointer;
     z-index: 2;
 }
+.modal-conatiner {
+    background
+}
 
 
 @media screen and (max-width: 600px) {

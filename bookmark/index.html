@@ -32,16 +32,24 @@
                 <a href="https://jiyoncodes.com" target="_blank">Jiyon Codes</a>
             </div>
         </div>
+        <!-- modal -->
         <div class="modal-container show-modal" id="modal">
             <div class="modal">
-                <i class="fa-sharp fa-solid fa-circle-xmark" id="delete-bookmark"></i>
+                <i class="fa-sharp fa-solid fa-circle-xmark" id="close-modal"></i>
                 <div class="modal-header">
                     <h3>Add Bookmark</h3>
                 </div>
-                <div class="modal-content"></div>
+                <div class="modal-content">
+                    <form id="bookmark-form">
+                <div class="form-group">
+                    <label for="website-name" class="form-label">Website Name</label>
+                    <input type="text" class="form-input" id="website-name">
+                </div>
+                
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
