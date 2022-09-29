@@ -40,6 +40,14 @@ function validate(nameValue, urlValue) {
 function buildBookmarks() {
   bookmarks.forEach((bookmark) => {
     const { name, url } = bookmark;
+    const item = document.createElement("div");
+    item.classList.add("item");
+    const closeIcon = document.createElement("i");
+    closeIcon.classList.add("fas", "fa-times");
+    closeIcon.setAttribute("title", "Delete Bookmark");
+    closeIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
+    const linkInfo = document.createElement("div");
+    linkInfo.classList.add("name");
   });
 }
 
