@@ -105,31 +105,40 @@ function fetchBookmarks() {
 // --------------
 // 1. Construct the HTML structure for each bookmark on the DOM
 function buildBookmarks() {
-  bookmarksContainer.textContent = ""; // erase prior DOM tree
+  // Remove all bookmark elements
+  bookmarksContainer.textContent = "";
+  // Build items
   bookmarks.forEach((bookmark) => {
     const { name, url } = bookmark;
-    const item = document.createElement("div"); // item
+    // Item
+    const item = document.createElement("div");
     item.classList.add("item");
-    const closeCrossIcon = document.createElement("i"); //icon
-    closeCrossIcon.classList.add("fas", "fa-times");
-    closeCrossIcon.setAttribute("title", "DeleteBookmark");
-    closeCrossIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
-    const linkInfo = document.createElement("div"); // container for favicon
+    // Close Icon
+    const closeIcon = document.createElement("i");
+    closeIcon.classList.add("fas", "fa-times");
+    closeIcon.setAttribute("title", "Delete Bookmark");
+    closeIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
+    // Favicon / Link Container
+    const linkInfo = document.createElement("div");
     linkInfo.classList.add("name");
-    const image = document.createElement("img"); //image
-    image.setAttribute("src", `${url}`);
-    favicon.setAttribute("alt", "img");
-    const link = document.createElement("a"); //href link
+    // Favicon
+    const favicon = document.createElement("img");
+    favicon.setAttribute(
+      "src",
+      `https://s2.googleusercontent.com/s2/favicons?domain=${url}`
+    );
+    favicon.setAttribute("alt", "Favicon");
+    // Link
+    const link = document.createElement("a");
     link.setAttribute("href", `${url}`);
     link.setAttribute("target", "_blank");
     link.textContent = name;
-
-    linkInfo.append(favicon, link); // add hierarchy of links
-    item.append(closeCrossIcon, linkInfo);
+    // Append to bookmarks container
+    linkInfo.append(favicon, link);
+    item.append(closeIcon, linkInfo);
     bookmarksContainer.appendChild(item);
   });
 }
-
 // deleteBookmark()
 // ----------------
 function deleteBookmark(url) {
