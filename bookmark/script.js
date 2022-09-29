@@ -48,6 +48,13 @@ function buildBookmarks() {
     closeIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
     const linkInfo = document.createElement("div");
     linkInfo.classList.add("name");
+    const favicon = document.createElement("img");
+    favicon.setAttribute(
+      "src",
+      `https://s2.googleusercontent.com/s2/favicons?domain=${url}`
+    );
+    favicon.setAttribute("alt", "Favicon");
+    const link = document.createElement("a");
   });
 }
 
