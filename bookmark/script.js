@@ -37,6 +37,12 @@ function validate(nameValue, urlValue) {
   return true;
 }
 
+function buildBookmarks() {
+  bookmarks.forEach((bookmark) => {
+    const { name, url } = bookmark;
+  });
+}
+
 function fetchBookmarks() {
   if (localStorage.getItem("bookmarks")) {
     bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
@@ -49,6 +55,7 @@ function fetchBookmarks() {
     ];
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
+  buildBookmarks();
 }
 
 //handle data from form
