@@ -116,12 +116,9 @@ function buildBookmarks() {
     closeCrossIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
     const linkInfo = document.createElement("div"); // container for favicon
     linkInfo.classList.add("name");
-    const favicon = document.createElement("img"); //favicon
-    favicon.setAttribute(
-      "src",
-      `https://s2.googleusercontent.com/s2/favicons?domain=${url}`
-    );
-    favicon.setAttribute("alt", "Favicon");
+    const image = document.createElement("img"); //image
+    image.setAttribute("src", `${url}`);
+    favicon.setAttribute("alt", "img");
     const link = document.createElement("a"); //href link
     link.setAttribute("href", `${url}`);
     link.setAttribute("target", "_blank");
