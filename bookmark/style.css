@@ -75,6 +75,7 @@ a:active {
     cursor: pointer;
     z-index: 2;
 }
+
 .modal-container {
     background:rgba(0, 0, 0, 0.6);
     display: none;
