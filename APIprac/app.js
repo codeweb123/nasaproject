@@ -1,3 +1,10 @@
+/* const arr1 = [5, 2, 1, 5, 7, 9, 1, 7433];
+
+const arr2 = arr1.map(function (x) {
+  return x * 5;
+});
+*/
+
 //starwars api practice
 const btn = document.createElement("button");
 btn.textContent = "press me";
@@ -7,6 +14,10 @@ btn.addEventListener("click", function () {
 });
 const output = document.createElement("div");
 document.body.appendChild(output);
+
+function outputPlanets(data) {
+  console.log(data);
+}
 
 function fetchData(url) {
   fetch(url)
@@ -21,7 +32,12 @@ function fetchData(url) {
           fetchData(data.next);
         });
       }
-      console.log(data);
+
+      const planets = data.results.map(function (item) {
+        console.log(item);
+        return { name: item.name, films: item.films };
+      });
+      console.log(planets);
     });
 }
 
