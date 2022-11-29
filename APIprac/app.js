@@ -1,3 +1,4 @@
+//starwars api practice
 const btn = document.createElement("button");
 btn.textContent = "press me";
 document.body.appendChild(btn);
