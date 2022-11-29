@@ -16,7 +16,9 @@ const output = document.createElement("div");
 document.body.appendChild(output);
 
 function outputPlanets(data) {
-  console.log(data);
+  data.forEach(function (item) {
+    console.log(item);
+  });
 }
 
 function fetchData(url) {
@@ -28,16 +30,14 @@ function fetchData(url) {
         const btn2 = document.createElement("button");
         btn2.textContent = "next";
         output.appendChild(btn2);
-        btn2.addEventListener("click", function () {
-          fetchData(data.next);
-        });
+        btn2.addEventListener("click", () => fetchData(data.next));
       }
 
       const planets = data.results.map(function (item) {
         console.log(item);
         return { name: item.name, films: item.films };
       });
-      console.log(planets);
+      outputPlanets(planets);
     });
 }
 
