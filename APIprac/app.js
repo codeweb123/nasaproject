@@ -19,6 +19,16 @@ function outputPlanets(data) {
   data.forEach(function (item) {
     console.log(item);
     const div = document.createElement("div");
+    div.textContent = item.name;
+
+    const ul = document.createElement("ul");
+    for (let i = 0; i < item.films.length; i++) {
+      let li = document.createElement("li");
+      li.textContent = item.films[i];
+      ul.appendChild(li);
+    }
+    div.appendChild(ul);
+    output.appendChild(div);
   });
 }
 
