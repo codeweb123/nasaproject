@@ -6,12 +6,23 @@ const arr2 = arr1.map(function (x) {
 */
 
 //starwars api practice
+
 const btn = document.createElement("button");
 btn.textContent = "press me";
 document.body.appendChild(btn);
 btn.addEventListener("click", function () {
-  fetchData("http://swapi.dev/api/planets");
+  fetchAll("http://swapi.dev/api/planets").then((planets) =>
+    console.log(planets)
+  );
 });
+
+const fetchAll = (url) =>
+  new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("foo");
+    }, 300);
+  });
+
 const output = document.createElement("div");
 document.body.appendChild(output);
 
