@@ -18,6 +18,7 @@ document.body.appendChild(output);
 function outputPlanets(data) {
   data.forEach(function (item) {
     console.log(item);
+    const div = document.createElement("div");
   });
 }
 
