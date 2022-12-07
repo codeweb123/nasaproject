@@ -20,7 +20,7 @@ const context = canvas.getContext("2d");
 let currentSize = 10;
 let bucketColor = "#FFFFFF";
 let currentColor = "#A51DAB";
-// let isEraser = false;
+let isEraser = false;
 // let isMouseDown = false;
 // let drawnArray = [];
 
@@ -40,9 +40,10 @@ let currentColor = "#A51DAB";
 // });
 
 // Setting Background Color
-// bucketColorBtn.addEventListener('change', () => {
-
-// });
+bucketColorBtn.addEventListener("change", () => {
+  bucketColor = `#${bucketColorBtn.value}`;
+  createCanvas();
+});
 
 // // Eraser
 // eraser.addEventListener('click', () => {
@@ -66,10 +67,10 @@ let currentColor = "#A51DAB";
 
 // Create Canvas
 function createCanvas() {
-  // canvas.width = ;
-  // canvas.height = ;
-  // context.fillStyle = ;
-  // context.fillRect();
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight - 50;
+  context.fillStyle = bucketColor;
+  context.fillRect(0, 0, canvas.width, canvas.height);
   body.appendChild(canvas);
 }
 
