@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: whitesmoke;
+    overflow-x: hidden;
+    font-family: Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
