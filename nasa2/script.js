@@ -15,17 +15,21 @@ const updateDOM = () =>
   resultsArray.forEach((result) => {
     const card = document.createElement("div");
     card.classList.add("card");
+
     const link = document.createElement("a");
     link.href = result.hdurl;
     link.title = "View Full Image";
     link.target = "_blank";
+
     const image = document.createElement("img");
     image.src = result.url;
     image.alt = "NASA Picture of the Day";
     image.loading = "lazy";
     image.classList.add("card-img-top");
+
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
+
     const cardTitle = document.createElement("h5");
     cardTitle.classList.add("card-title");
     cardTitle.textContent = result.title;
@@ -37,10 +41,13 @@ const updateDOM = () =>
 
     const cardText = document.createElement("p");
     cardText.textContent = result.explanation;
+
     const footer = document.createElement("small");
     footer.classList.add("text-muted");
+
     const date = document.createElement("strong");
     date.textContent = result.date;
+
     const copyrightResult =
       result.copyright === undefined ? " " : result.copyright;
 
@@ -65,9 +72,16 @@ async function getNasaPhotos() {
 const saveFavorite = (itemUrl) => {
   //loop through results array
   resultsArray.forEach((item) => {
-    if (item.url.includes(itemUrl)) {
+    if (item.url.includes(itemUrl) && !favorites[itemUrl]) {
       favorites[itemUrl] = item;
-      console.log(favorites);
+      //show save confirmation for 2 seconds
+      saveConfirmed.hidden = false;
+      setTimeout(() => {
+        saveConfirmed.hidden = true;
+      }, 2000);
+
+      // set favorites in local storage : (need to stringify)
+      localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
     }
   });
 };
