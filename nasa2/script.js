@@ -12,9 +12,9 @@ let resultsArray = [];
 let favorites = {};
 
 function createDOMNodes(page) {
-  const currentArray = page === "results" ? resultsArray : favorites;
-  console.log(page);
-  resultsArray.forEach((result) => {
+  const currentArray =
+    page === "results" ? resultsArray : Object.values(favorites);
+  currentArray.forEach((result) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -38,8 +38,13 @@ function createDOMNodes(page) {
 
     const saveText = document.createElement("p");
     saveText.classList.add("clickable");
-    saveText.textContent = "Add To Favorites";
-    saveText.setAttribute("onclick", `saveFavorite('${result.url}')`);
+    if (page === "results") {
+      saveText.textContent = "Add To Favorites";
+      saveText.setAttribute("onclick", `saveFavorite('${result.url}')`);
+    } else {
+      saveText.textContent = "Remove Favorite";
+      saveText.setAttribute("onclick", `removeFavorite('${result.url}')`);
+    }
 
     const cardText = document.createElement("p");
     cardText.textContent = result.explanation;
@@ -96,5 +101,13 @@ const saveFavorite = (itemUrl) => {
     }
   });
 };
+
+function removeFavorite(itemUrl) {
+  if (favorites[itemUrl]) {
+    delete favorites[itemUrl];
+    localStorage.setItem("nasaFavorites", JSON.stringify(favorites));
+    updateDOM("favorites");
+  }
+}
 
 getNasaPhotos();
